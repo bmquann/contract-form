@@ -6,7 +6,7 @@
     <div class="form__header">
       {{ header }}
     </div>
-    <ContractFormProgressBar  :currentForm="currentForm"/>
+    <ContractFormProgressBar :currentForm="currentForm" />
     <ContractFormCalender />
     <ContractFormWarning />
     <form @submit.prevent="handleNext">
@@ -17,7 +17,6 @@
         :class="{ hidden: currentForm === 3 && form.disabled }"
       >
         <div :class="{ form3: currentForm === 3 }" class="sub-form__container">
-          {{ form.disabled }}
           <div class="sub-form__title">
             {{ form.title }}
           </div>
@@ -450,11 +449,11 @@ button[disabled] {
   cursor: pointer;
 }
 
-.form__header{
+.form__header {
   font-weight: 400;
-font-size: 24px;
-line-height: 52px;
-color: #333333;
+  font-size: 24px;
+  line-height: 52px;
+  color: #333333;
 }
 
 .form3 {

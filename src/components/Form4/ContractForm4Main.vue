@@ -17,7 +17,7 @@
       入社手続きの承認をお待ちください。
     </div>
     <div class="form4__btn">
-      <button @click="handlePrev">申請した内容を見る</button>
+      <button @click="handleNext">申請した内容を見る</button>
     </div>
   </div>
 </template>
@@ -36,10 +36,13 @@ export default {
     },
   },
   methods: {
-       handlePrev: function () {
+    handleNext: function () {
+      this.$store.commit("UPDATE_PAGEACTIVE", 1);
+    },
+    handlePrev: function () {
       this.$store.commit("HANDLE_PREV");
     },
-  }
+  },
 };
 </script>
 
@@ -75,16 +78,16 @@ export default {
   margin: 36px auto;
 }
 
-.form4__btn button{
-  padding:12px 16px;
-  color: #007BC3;
-  border: 1px solid #007BC3;
-border-radius: 8px;
-background:#fff;
-cursor: pointer;
+.form4__btn button {
+  padding: 12px 16px;
+  color: #007bc3;
+  border: 1px solid #007bc3;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
 }
 
-.form4__btn{
+.form4__btn {
   text-align: center;
 }
 </style>
